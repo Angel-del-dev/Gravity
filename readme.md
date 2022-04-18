@@ -15,6 +15,5 @@
 * Custom exceptions
 * Custom datatypes(Ver libreria.test)
 * Custom methods
-* Terminal commands to manage the system
-    * Migrations
-    * Create [Controllers, Exceptions, Models]
+* Sessions
+    * Persisting information through the project
