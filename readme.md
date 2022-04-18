@@ -3,7 +3,7 @@
 ## Features
 * Simple semi-static routing system
     * Absolute routes with url params
-* Return values Differentiate
+* Differentiate return values
     * Views
     * Other
 
@@ -16,4 +16,4 @@
 * Custom datatypes(Ver libreria.test)
 * Custom methods
 * Sessions
-    * Persisting information through the project
+    * Persisting information through the
