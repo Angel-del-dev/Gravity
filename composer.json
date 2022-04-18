@@ -1,0 +1,20 @@
+{
+    "name": "angelnovo/gravity",
+    "description": "Easy to use and low cost Framework",
+    "type": "project",
+    "authors": [
+        {
+            "name": "AngelNovo",
+            "email": "angelnovo15@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Configuration\\": "configuration/",
+            "App\\http\\Controllers\\": "app/http/Controllers/"
+        }       
+        
+    }
+}
