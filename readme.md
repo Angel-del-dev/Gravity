@@ -5,6 +5,7 @@
     * Absolute routes with url params
 * Differentiate return values
     * Views
+        * Possibility to add variables from controller
     * Other
 * Dotenv library
 
