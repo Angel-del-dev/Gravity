@@ -15,7 +15,8 @@
     "autoload": {
         "psr-4": {
             "Configuration\\": "configuration/",
-            "App\\http\\Controllers\\": "app/http/Controllers/"
+            "App\\http\\Controllers\\": "app/http/Controllers/",
+            "App\\BuiltIn\\Class\\": "app/BuiltIn/Class/"
         }       
         
     }

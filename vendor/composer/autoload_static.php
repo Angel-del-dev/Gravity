@@ -38,6 +38,7 @@ class ComposerStaticInite6b06d2bbca4b2cf25fc2b30b3b7c0fc
         'A' => 
         array (
             'App\\http\\Controllers\\' => 21,
+            'App\\BuiltIn\\Class\\' => 18,
         ),
     );
 
@@ -73,6 +74,10 @@ class ComposerStaticInite6b06d2bbca4b2cf25fc2b30b3b7c0fc
         'App\\http\\Controllers\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/http/Controllers',
+        ),
+        'App\\BuiltIn\\Class\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/BuiltIn/Class',
         ),
     );
 

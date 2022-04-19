@@ -101,17 +101,18 @@ class Router
                  * it will return a closure object() instead of the given string
                  */
                 $callback = self::$notFoundHandler->__invoke();
+                self::createView($callback);
             }
             die();
         }
     }
 
     private static function returnInformation($controllerReturn) {
-        if(is_string($controllerReturn)) {
-            $checkIfRoute = self::checkIfRoute($controllerReturn);
+        if(is_array($controllerReturn) && array_is_list($controllerReturn)) {
+            $checkIfRoute = self::checkIfRoute($controllerReturn[0]);
 
             if($checkIfRoute) {
-                require_once $controllerReturn;
+                self::createView($controllerReturn);
                 return null;
             }
         }
@@ -121,8 +122,18 @@ class Router
     }
 
     private static function checkIfRoute(string $controllReturn) {
+        
         if(file_exists($controllReturn)) {
             return $controllReturn;
         }
+    }
+
+    private static function createView(array $view): void
+    {
+        foreach($view[1] as $key => $value) {
+            ${$key} = $value;
+        }
+
+        require_once $view[0];
     }
 }

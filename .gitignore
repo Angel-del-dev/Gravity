@@ -2,8 +2,8 @@ app/http/Controllers/*
 !app/http/Controllers/Controller
 
 views/*
-!views/home.phtml
-!views/404.phtml
+!views/home.gravity.phtml
+!views/404.gravity.phtml
 
 *.md
 !readme.md
