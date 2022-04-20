@@ -37,7 +37,10 @@ class ComposerStaticInite6b06d2bbca4b2cf25fc2b30b3b7c0fc
         ),
         'A' => 
         array (
+            'App\\http\\Models\\' => 16,
             'App\\http\\Controllers\\' => 21,
+            'App\\BuiltIn\\MySql\\Methods\\' => 26,
+            'App\\BuiltIn\\MySql\\' => 18,
             'App\\BuiltIn\\Class\\' => 18,
         ),
     );
@@ -71,9 +74,21 @@ class ComposerStaticInite6b06d2bbca4b2cf25fc2b30b3b7c0fc
         array (
             0 => __DIR__ . '/../..' . '/configuration',
         ),
+        'App\\http\\Models\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/http/Models',
+        ),
         'App\\http\\Controllers\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/http/Controllers',
+        ),
+        'App\\BuiltIn\\MySql\\Methods\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/BuiltIn/MySql/Methods',
+        ),
+        'App\\BuiltIn\\MySql\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/BuiltIn/MySql',
         ),
         'App\\BuiltIn\\Class\\' => 
         array (

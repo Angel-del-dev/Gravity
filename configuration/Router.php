@@ -108,7 +108,7 @@ class Router
     }
 
     private static function returnInformation($controllerReturn) {
-        if(is_array($controllerReturn) && array_is_list($controllerReturn)) {
+        if(is_array($controllerReturn) && array_is_list($controllerReturn) && is_string($controllerReturn[0])) {
             $checkIfRoute = self::checkIfRoute($controllerReturn[0]);
 
             if($checkIfRoute) {

@@ -13,6 +13,9 @@ return array(
     'GrahamCampbell\\ResultType\\' => array($vendorDir . '/graham-campbell/result-type/src'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
     'Configuration\\' => array($baseDir . '/configuration'),
+    'App\\http\\Models\\' => array($baseDir . '/app/http/Models'),
     'App\\http\\Controllers\\' => array($baseDir . '/app/http/Controllers'),
+    'App\\BuiltIn\\MySql\\Methods\\' => array($baseDir . '/app/BuiltIn/MySql/Methods'),
+    'App\\BuiltIn\\MySql\\' => array($baseDir . '/app/BuiltIn/MySql'),
     'App\\BuiltIn\\Class\\' => array($baseDir . '/app/BuiltIn/Class'),
 );

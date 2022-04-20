@@ -1,5 +1,4 @@
-app/http/Controllers/*
-!app/http/Controllers/Controller
+
 
 views/*
 !views/home.gravity.phtml
