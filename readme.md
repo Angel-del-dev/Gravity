@@ -1,4 +1,4 @@
-# Gravity(**Dev** *0.0.0.2*)
+# Gravity(**Dev** *0.0.1.0*)
 
 ## Features
 * Simple semi-static routing system
@@ -8,6 +8,8 @@
         * Possibility to add variables from controller
     * Other
 * Dotenv library
+* Query builder basics
+    * Select query builder
 
 ## To-do
 * Database
