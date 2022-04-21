@@ -15,11 +15,18 @@
     "autoload": {
         "psr-4": {
             "Configuration\\": "configuration/",
+
             "App\\http\\Controllers\\": "app/http/Controllers/",
             "App\\http\\Models\\": "app/http/Models/",
+
             "App\\BuiltIn\\Class\\": "app/BuiltIn/Class/",
+
             "App\\BuiltIn\\MySql\\": "app/BuiltIn/MySql/",
-            "App\\BuiltIn\\MySql\\Methods\\": "app/BuiltIn/MySql/Methods"
+            "App\\BuiltIn\\MySql\\Methods\\": "app/BuiltIn/MySql/Methods",
+
+            "App\\BuiltIn\\File\\": "app/BuiltIn/File",
+
+            "App\\BuiltIn\\DataType\\FixedArray\\": "app/BuiltIn/DataType/FixedArray"
         }       
         
     }

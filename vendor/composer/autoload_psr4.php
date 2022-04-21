@@ -17,5 +17,7 @@ return array(
     'App\\http\\Controllers\\' => array($baseDir . '/app/http/Controllers'),
     'App\\BuiltIn\\MySql\\Methods\\' => array($baseDir . '/app/BuiltIn/MySql/Methods'),
     'App\\BuiltIn\\MySql\\' => array($baseDir . '/app/BuiltIn/MySql'),
+    'App\\BuiltIn\\File\\' => array($baseDir . '/app/BuiltIn/File'),
+    'App\\BuiltIn\\DataType\\FixedArray\\' => array($baseDir . '/app/BuiltIn/DataType/FixedArray'),
     'App\\BuiltIn\\Class\\' => array($baseDir . '/app/BuiltIn/Class'),
 );

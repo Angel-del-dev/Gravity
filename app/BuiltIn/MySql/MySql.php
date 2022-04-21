@@ -2,18 +2,13 @@
 
 namespace App\BuiltIn\MySql;
 
+use App\BuiltIn\Class\Log;
+use DateTime;
+
 class MySql{
 
     public static function createConnection() {
         return MySqlController::establishConnection();
-    }
-
-    public static function _raw(string $query) {
-        $conn = self::createConnection();
-        $stmt = $conn->prepare($query);
-        
-
-        return self::execute($stmt);
     }
 
     public static function create() { }
@@ -31,6 +26,13 @@ class MySql{
         $query = "$select ". implode(', ', $columns) ." from $table {$where[0]}";
 
         $stmt = $conn->prepare($query);
+
+        $fullQueryLog = "'$select ". implode(', ', $columns) ." from $table {$where[2]}'";
+
+        Log::create(
+            "Checked query executed $fullQueryLog", 
+            $_SERVER['DOCUMENT_ROOT'] . '/../logs/Mysql/query.log'
+        );
         
         return self::execute($stmt, $where[1]);
     }
@@ -40,7 +42,7 @@ class MySql{
     /**
      * Execute the query
      */
-    public static function execute($stmt, $bind = []) {
+    private static function execute($stmt, $bind = []) {
 
         if(sizeof($bind) > 0) {
             $amount = self::createBind(count($bind));
@@ -68,6 +70,22 @@ class MySql{
     private static function createBind(int $length): string
     {
         return str_repeat("s", $length);
+    }
+
+    /**
+     * Functions that might cause problems
+     */
+
+    public static function _raw(string $query) {
+        $conn = self::createConnection();
+        $stmt = $conn->prepare($query);
+        
+        Log::create(
+            "Unchecked query executed '$query'", 
+            $_SERVER['DOCUMENT_ROOT'] . '/../logs/Mysql/query.log'
+        );
+
+        return self::execute($stmt);
     }
 }
 

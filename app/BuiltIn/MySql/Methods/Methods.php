@@ -9,6 +9,8 @@ class Methods {
         $where = ['where'];
         $conditionValues = [];
 
+        $rawWhere = '';
+
         foreach($conditions as $condition) {
             $noWhiteSpacesCondition = self::removeWhiteSpaces($condition[0]);
             
@@ -18,11 +20,13 @@ class Methods {
             
             array_push($conditionValues, $preparedCondition[1]);
             array_push($where, $formCondition);
+
+            $rawWhere .= " where {$condition[0]} " . (isset($condition[1]) ? $condition[1] : '');
         }
 
         $whereString = implode(" ", $where);
         
-        return [$whereString, $conditionValues];
+        return [$whereString, $conditionValues, $rawWhere];
     }
 
     public static function innerJoin() { }
@@ -45,8 +49,8 @@ class Methods {
     }
 
     /**
-     * Replaces the actual value of the where with a ? and returns an array with both
-     * the condition and the value
+     * Replaces the actual value of the where with a ? and returns an array with:
+     * the condition, the value and the raw condition
      */
 
     private static function prepareWhereString(string $condition): array
@@ -56,7 +60,6 @@ class Methods {
         $modify = '?';
         $conditionArray[array_key_last($conditionArray)] = $modify;
         $preparedCondition = implode(' = ', $conditionArray);
-
 
         return [$preparedCondition, $whereValue];
     }

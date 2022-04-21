@@ -12,6 +12,7 @@ class DBTestController extends Controller{
 
     public static function dbtest(): array
     {
+        // $result = Model::_raw("select * from test");
         $result = Model::get(
             table: TestModel::$table,
             where: Methods::where([
