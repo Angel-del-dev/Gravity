@@ -15,11 +15,12 @@ class DBTestController extends Controller{
         $result = Model::get(
             table: TestModel::$table,
             where: Methods::where([
-                ['id = "1"', "and"],
-                ['nombre = "test"']
+                ['id = 1', "and"],
+                ['nombre = test']
             ]),
             columns: TestModel::$columns
         );
+
         return $result;
     }
 }
