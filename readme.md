@@ -1,4 +1,4 @@
-# Gravity(**Dev** *0.0.2.1*)
+# Gravity(**Dev** *0.0.2.2*)
 
 ## Features
 * Simple semi-static routing system
@@ -12,6 +12,7 @@
     * Select query builder(Prepared statement with bind_values)
 * Custom DataTypes
    * Fixed type array
+* Log system
 
 ## To-do
 * Database
