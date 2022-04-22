@@ -8,3 +8,4 @@ views/*
 !readme.md
 !.gitignore
 .env
+!.env-example
