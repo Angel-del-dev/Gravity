@@ -108,13 +108,20 @@ class Router
     }
 
     private static function returnInformation($controllerReturn) {
-        if(is_array($controllerReturn) && array_is_list($controllerReturn) && is_string($controllerReturn[0])) {
+        if(
+            is_array($controllerReturn) && 
+            array_is_list($controllerReturn) &&
+            count($controllerReturn) > 0 && 
+            is_string($controllerReturn[0])
+        ) {
+
             $checkIfRoute = self::checkIfRoute($controllerReturn[0]);
 
             if($checkIfRoute) {
                 self::createView($controllerReturn);
                 return null;
             }
+
         }
 
         $response = Response::formatResponse($controllerReturn);

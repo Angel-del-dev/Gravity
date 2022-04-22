@@ -13,7 +13,7 @@ class DataTypeTestController extends Controller{
         $array->softAppend('test');
         $array->softAppend('test2');
 
-        print_r($array->toArray());
+        print_r($array->__toString());
         die();   
    }
 }

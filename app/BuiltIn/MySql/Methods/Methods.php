@@ -12,9 +12,8 @@ class Methods {
         $rawWhere = '';
 
         foreach($conditions as $condition) {
-            $noWhiteSpacesCondition = self::removeWhiteSpaces($condition[0]);
             
-            $preparedCondition = self::prepareWhereString($noWhiteSpacesCondition);
+            $preparedCondition = self::prepareWhereString($condition[0]);
             
             $formCondition = " {$preparedCondition[0]} " . (isset($condition[1]) ? $condition[1] : '');
             
@@ -25,7 +24,6 @@ class Methods {
         }
 
         $whereString = implode(" ", $where);
-        
         return [$whereString, $conditionValues, $rawWhere];
     }
 
@@ -43,11 +41,6 @@ class Methods {
 
     public static function having() { }
 
-    private static function removeWhiteSpaces(string $string): string
-    {
-        return preg_replace('/\s+/', '', $string);
-    }
-
     /**
      * Replaces the actual value of the where with a ? and returns an array with:
      * the condition, the value and the raw condition
@@ -55,11 +48,12 @@ class Methods {
 
     private static function prepareWhereString(string $condition): array
     {
-        $conditionArray = explode('=', $condition);
+        $conditionArray = explode(' ', trim($condition));
+        $operation = $conditionArray[1];
         $whereValue = end($conditionArray);
         $modify = '?';
         $conditionArray[array_key_last($conditionArray)] = $modify;
-        $preparedCondition = implode(' = ', $conditionArray);
+        $preparedCondition = implode($operation, [$conditionArray[0], end($conditionArray)]);
 
         return [$preparedCondition, $whereValue];
     }

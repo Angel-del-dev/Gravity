@@ -68,8 +68,9 @@ class FixedArray {
     /**
      * By any chance
      */
-    public function __toString() {
-
+    public function __toString(): string
+    {
+        return implode(', ', $this->toArray());
     }
 
     // End of available public functions
