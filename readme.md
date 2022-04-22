@@ -1,4 +1,4 @@
-# Gravity(**Dev** *0.0.1.0*)
+# Gravity(**Dev** *0.0.2.1*)
 
 ## Features
 * Simple semi-static routing system
@@ -9,7 +9,9 @@
     * Other
 * Dotenv library
 * Query builder basics
-    * Select query builder
+    * Select query builder(Prepared statement with bind_values)
+* Custom DataTypes
+   * Fixed type array
 
 ## To-do
 * Database
