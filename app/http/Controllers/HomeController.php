@@ -9,7 +9,7 @@ use App\BuiltIn\Class\View;
 class HomeController extends Controller{
     public static function getHome(array $params = []) {
         $vars = [
-            "welcome" => "Welcome to home!",
+            'title' => 'Gravity test - Home',
         ];
 
        return View::call('home', $vars);

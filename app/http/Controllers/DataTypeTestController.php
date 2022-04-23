@@ -26,9 +26,6 @@ class DataTypeTestController extends Controller{
       $array->softAppend(4);
       $array->softAppend(4);
 
-      print_r($array->toArray());
-      print_r('<br />');
       print_r($array->_toString());
-      die();
    }
 }
