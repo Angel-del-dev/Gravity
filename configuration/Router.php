@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace Configuration;
 
-use Configuration\Response;
-
 class Router 
 {
 
@@ -161,9 +159,7 @@ class Router
             }
 
         }
-
-        $response = Response::formatResponse($controllerReturn);
-        echo $response;
+        Output::show($controllerReturn);
     }
 
     private static function checkIfRoute(string $controllReturn) {

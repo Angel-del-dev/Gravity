@@ -30,15 +30,15 @@ Router::get('/version/stable/:version:', function($get) {
 });
 
 Router::get('/urlparams/key/:prueba:', function($get) {
-    return $get['values'];
+    return $get;
 });
 
 Router::get('/urlparams/key/asd/asdasd/:testRoute:', function($get) {
-    return $get['values'];
+    return $get;
 });
 
 Router::get('/hello/:test1:', function($get) {
-    return $get['value'];
+    return $get;
 });
 
 Router::post('/contact/:id:', [ContactController::class, 'contactPost']);
