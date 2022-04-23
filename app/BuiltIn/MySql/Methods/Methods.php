@@ -27,19 +27,79 @@ class Methods {
         return [$whereString, $conditionValues, $rawWhere];
     }
 
-    public static function innerJoin() { }
+    public static function innerJoin(
+        string $principalTable, 
+        string $secondaryTable, 
+        string $firstParam, 
+        string $secondParam, 
+        string $secondaryTableAlias
+    ): string
+    {
+        return 'INNER JOIN' . self::genericJoin(
+            $principalTable, 
+            $secondaryTable, 
+            $firstParam, 
+            $secondParam, 
+            $secondaryTableAlias
+        );
+    }
 
-    public static function leftJoin() { }
+    public static function leftJoin(
+        string $leftTable, 
+        string $rightTable, 
+        string $leftParam, 
+        string $rightParam, 
+        string $rightTableAlias
+    ): string 
+    { 
+        return 'LEFT JOIN' . self::genericJoin(
+            $leftTable, 
+            $rightTable, 
+            $leftParam, 
+            $rightParam, 
+            $rightTableAlias
+        );
+    }
 
-    public static function rightJoin() { }
+    public static function rightJoin(
+        string $leftTable, 
+        string $rightTable, 
+        string $leftParam, 
+        string $rightParam, 
+        string $rightTableAlias
+    ): string 
+    { 
+        return 'RIGHT JOIN' . self::genericJoin(
+            $leftTable, 
+            $rightTable, 
+            $leftParam, 
+            $rightParam, 
+            $rightTableAlias
+        );
+    }
 
-    public static function fullJoin() { }
-
-    public static function orderBy() { }
+    public static function orderBy(
+        string $column,
+        string $order
+    ): string
+    { 
+        return "ORDER BY $column $order";
+    }
     
-    public static function groupBy() { }
+    public static function groupBy(string $column): string 
+    {
+        return "GROUP BY $column";
+    }
 
-    public static function having() { }
+    public static function having(string $condition): string
+    {
+        return "HAVING $condition";
+    }
+
+    public static function limit($limit, $offset = 0): string
+    {
+        return  "LIMIT $limit $offset";
+    }
 
     /**
      * Replaces the actual value of the where with a ? and returns an array with:
@@ -57,5 +117,18 @@ class Methods {
 
         return [$preparedCondition, $whereValue];
     }
+
+    private static function genericJoin(
+        string $principalTable, 
+        string $secondaryTable, 
+        string $firstParam, 
+        string $secondParam, 
+        string $secondaryTableAlias
+    ): string
+    {
+        return "$secondaryTable as $secondaryTableAlias 
+        ON $principalTable.$firstParam = $secondaryTableAlias.$secondParam";
+    }
+
     
 }

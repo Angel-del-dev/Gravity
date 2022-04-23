@@ -1,5 +1,6 @@
 <?php
 
+use App\BuiltIn\Class\Redirect;
 use Configuration\Router;
 use App\http\Controllers\ContactController;
 use App\http\Controllers\DataTypeTestController;
@@ -17,7 +18,12 @@ Router::get('/about', function(array $params = []) {
 
 Router::get('/contact', [ContactController::class, 'execute']);
 Router::get('/dbtest', [DBTestController::class, 'dbtest']);
-Router::get('/datatype', [DataTypeTestController::class, 'dataTypeTest']);
+Router::get('/fixedTypeArrayTest', [DataTypeTestController::class, 'fixedTypeArrayTest']);
+Router::get('/fixedLengthArrayTest', [DataTypeTestController::class, 'fixedLengthArrayTest']);
+
+Router::get('/redirectTest', function() {
+    Redirect::send('/');
+});
 
 Router::post('/contact', [ContactController::class, 'contactPost']);
 

@@ -18,12 +18,17 @@ class MySql{
     public static function get(
         string $table,
         array $columns = ['*'],
-        array $where = []
+        array $where = [],
+        string $join = '',
+        string $orderBy = '',
+        string $groupBy = '',
+        string $having = '',
+        string $limit = '' 
     ) {
         $select = 'SELECT';
 
         $conn = self::createConnection();
-        $query = "$select ". implode(', ', $columns) ." from $table {$where[0]}";
+        $query = "$select ". implode(', ', $columns) ." from $table $join {$where[0]} $groupBy $orderBy $having $limit";
 
         $stmt = $conn->prepare($query);
 

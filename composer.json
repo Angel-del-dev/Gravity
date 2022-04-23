@@ -26,7 +26,8 @@
 
             "App\\BuiltIn\\File\\": "app/BuiltIn/File",
 
-            "App\\BuiltIn\\DataType\\FixedArray\\": "app/BuiltIn/DataType/FixedArray"
+            "App\\BuiltIn\\DataType\\FixedTypeArray\\": "app/BuiltIn/DataType/FixedTypeArray",
+            "App\\BuiltIn\\DataType\\FixedLengthArray\\": "app/BuiltIn/DataType/FixedLengthArray"
         }       
         
     }

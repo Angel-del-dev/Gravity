@@ -1,9 +1,9 @@
 <?php
-    namespace App\BuiltIn\DataType\FixedArray;
+    namespace App\BuiltIn\DataType\FixedLengthArray;
 
     use Exception;  
 
-    class FixedArrayException extends Exception {
+    class FixedLengthArrayException extends Exception {
         
         protected $details = "";
 

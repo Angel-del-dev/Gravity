@@ -1,17 +1,21 @@
 <?php
 
-namespace App\BuiltIn\DataType\FixedArray;
+namespace App\BuiltIn\DataType\FixedTypeArray;
 
-class FixedArray {
+class FixedTypeArray {
     protected $enums; // Accepted datatypes
         
     protected $frame; // Stack info
 
     /**
-     * Array that only allows an user set specific datatype
-     */
+    * Array that only allows an user set specific datatype. Allows:
+    * INTE;
+    * STRI;
+    * DOUB;
+    * ARRA;
+    */
     public function __construct($type) {
-        $this->enums = new FixedArrayEnums();
+        $this->enums = new FixedTypeArrayEnums();
 
         $this->frame = [
             'values' => [],
@@ -32,10 +36,8 @@ class FixedArray {
         $dataType = gettype($value);
 
         if($this->checkTypeToAppend($dataType)) {
-            $this->__hardAppend($value);
+            $this->_hardAppend($value);
         }
-
-        $this->changeLength();
 
     }
 
@@ -44,8 +46,9 @@ class FixedArray {
      * Allows the insert of data without running any required checks
      *  * The datatype and the type set in the StaticArray don't have to be the same
      */
-    public function __hardAppend($value) {  
+    public function _hardAppend($value) {  
         array_push($this->frame["values"], $value);
+        $this->changeLength();
     }
 
     /**
@@ -68,9 +71,9 @@ class FixedArray {
     /**
      * By any chance
      */
-    public function __toString(): string
+    public function _toString(string $delimiter = ', '): string
     {
-        return implode(', ', $this->toArray());
+        return implode($delimiter, $this->toArray());
     }
 
     // End of available public functions
@@ -88,7 +91,7 @@ class FixedArray {
     // Start of check functions
     private function checkType($type, $details) {
         if(!isset($this->enums->$type)) {
-            throw new FixedArrayException($details);
+            throw new FixedTypeArrayException($details);
             die();
         }
 
@@ -104,7 +107,7 @@ class FixedArray {
             return true;
         }
 
-        throw new FixedArrayException(": Cannot append a value with the datatype `$type`, the array only supports `{$this->frame['accepted_type']}`");
+        throw new FixedTypeArrayException(": Cannot append a value with the datatype `$type`, the array only supports `{$this->frame['accepted_type']}`");
 
         return false;
        
