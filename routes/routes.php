@@ -6,6 +6,7 @@ use App\http\Controllers\ContactController;
 use App\http\Controllers\DataTypeTestController;
 use App\http\Controllers\HomeController;
 use App\http\Controllers\DBTestController;
+use Configuration\Request;
 
 Router::get('/', [HomeController::class, 'getHome']);
 
@@ -14,8 +15,8 @@ Router::get('/', [HomeController::class, 'getHome']);
  */
 Router::get('/about', function(array $params = []) {
     return 'About section';
-});
 
+});
 Router::get('/contact', [ContactController::class, 'execute']);
 Router::get('/dbtest', [DBTestController::class, 'dbtest']);
 Router::get('/fixedTypeArrayTest', [DataTypeTestController::class, 'fixedTypeArrayTest']);
@@ -24,7 +25,22 @@ Router::get('/fixedLengthArrayTest', [DataTypeTestController::class, 'fixedLengt
 Router::get('/redirectTest', function() {
     Redirect::send('/');
 });
+Router::get('/version/stable/:version:', function($get) {
+    return $get;
+});
 
-Router::post('/contact', [ContactController::class, 'contactPost']);
+Router::get('/urlparams/key/:prueba:', function($get) {
+    return $get['values'];
+});
+
+Router::get('/urlparams/key/asd/asdasd/:testRoute:', function($get) {
+    return $get['values'];
+});
+
+Router::get('/hello/:test1:', function($get) {
+    return $get['value'];
+});
+
+Router::post('/contact/:id:', [ContactController::class, 'contactPost']);
 
 ?>

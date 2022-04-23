@@ -12,11 +12,8 @@ class ContactController extends Controller{
       return View::call('contact');
     }
 
-    public static function contactPost(array $params)
+    public static function contactPost($params)
     {
-        $name = $params['name'];
-        $message = $params['message'];
-
-        return ['name' => $name, 'message' => $message];
+        return $params;
     }
 }

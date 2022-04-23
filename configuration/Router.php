@@ -57,11 +57,13 @@ class Router
     public static function run() 
     {
         $callback = self::createCallbacks();
+        $route = isset($callback['handler']) ? $callback['handler'] : '';
+        $_GET['value'] = isset($callback['req_values']) ? Request::formatRequest($callback['req_values']) : '';
 
-        self::routeNotExist($callback);
+        self::routeNotExist($route);
 
         // Allows to use $_GET && $_POST without the need of calling global variables
-        $controllerReturn = call_user_func_array($callback, [
+        $controllerReturn = call_user_func_array($route, [
             array_merge($_GET, $_POST)
         ]);
         
@@ -76,12 +78,48 @@ class Router
         $callback = null;
 
         foreach(self::$handlers as $handler) {
-            if($handler['path'] === $requestPath && $method === $handler['method']) {
-                $callback = $handler['handler'];
-            }
-        }
 
+            $storedUrl = explode('/', $handler['path']);
+            $requestUrl = explode('/', $requestPath);
+
+            $requestUrlSize = sizeof($requestUrl)-1;
+
+            $values = [];
+            $cloneRequestUrl = $requestUrl;
+            $temporalUrl = $requestUrl;
+ 
+            for($i = 0; $i < sizeof($storedUrl); $i++) {
+                if($requestUrlSize < $i ) break; 
+
+                if(
+                    str_starts_with($storedUrl[$i], ':') && 
+                    str_ends_with($storedUrl[$i], ':')
+                ) 
+                {
+                    if(self::checkRealUrl($storedUrl, $temporalUrl, $i)) {
+                        array_push($values, $cloneRequestUrl[$i]);
+                        $cloneRequestUrl[$i] = $storedUrl[$i];
+                    }
+                }
+            }
+            $requestPath = implode('/', $cloneRequestUrl);
+
+            if($handler['path'] === $requestPath && $method === $handler['method']) {
+                $callback['handler'] = $handler['handler'];
+                $callback['req_values'] = $values;
+                break;
+            }
+            $values = [];
+        }
         return $callback;
+    }
+
+    private static function checkRealUrl($realUrl, $requestUrl, $counter) {
+        $requestUrl[$counter] = $realUrl[$counter];
+        if(implode('/', $realUrl) === implode('/', $requestUrl)) {
+            return true;
+        }
+        return false;
     }
 
     private static function routeNotExist($callback) {
