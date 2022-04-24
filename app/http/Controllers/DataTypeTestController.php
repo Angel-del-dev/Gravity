@@ -10,7 +10,7 @@ use App\BuiltIn\DataType\FixedTypeArray\FixedTypeArray;
 class DataTypeTestController extends Controller{
    public static function fixedTypeArrayTest(): void
     {
-        $array = new FixedTypeArray('STRI');
+        $array = new FixedTypeArray('S');
         $array->softAppend('test');
         $array->softAppend('test2');
 

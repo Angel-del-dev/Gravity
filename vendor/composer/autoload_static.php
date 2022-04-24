@@ -42,6 +42,7 @@ class ComposerStaticInite6b06d2bbca4b2cf25fc2b30b3b7c0fc
             'App\\BuiltIn\\MySql\\Methods\\' => 26,
             'App\\BuiltIn\\MySql\\' => 18,
             'App\\BuiltIn\\File\\' => 17,
+            'App\\BuiltIn\\Exception\\' => 22,
             'App\\BuiltIn\\DataType\\FixedTypeArray\\' => 36,
             'App\\BuiltIn\\DataType\\FixedLengthArray\\' => 38,
             'App\\BuiltIn\\Class\\' => 18,
@@ -96,6 +97,10 @@ class ComposerStaticInite6b06d2bbca4b2cf25fc2b30b3b7c0fc
         'App\\BuiltIn\\File\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/BuiltIn/File',
+        ),
+        'App\\BuiltIn\\Exception\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/BuiltIn/Exception',
         ),
         'App\\BuiltIn\\DataType\\FixedTypeArray\\' => 
         array (

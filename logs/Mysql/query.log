@@ -5,3 +5,4 @@
  Checked query executed 'SELECT id, nombre from test  where id = 1 and where nombre = test ' 18:31:46 23-04-2022
  Checked query executed 'SELECT id, nombre from test  where id = 1 and where nombre = test ' 19:56:11 23-04-2022
  Checked query executed 'SELECT id, nombre from test  where id = 1 and where nombre = test ' 20:48:36 23-04-2022
+ Checked query executed 'SELECT id, nombre from test  where id = 1 and where nombre = test ' 12:51:26 24-04-2022

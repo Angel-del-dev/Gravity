@@ -18,6 +18,7 @@ return array(
     'App\\BuiltIn\\MySql\\Methods\\' => array($baseDir . '/app/BuiltIn/MySql/Methods'),
     'App\\BuiltIn\\MySql\\' => array($baseDir . '/app/BuiltIn/MySql'),
     'App\\BuiltIn\\File\\' => array($baseDir . '/app/BuiltIn/File'),
+    'App\\BuiltIn\\Exception\\' => array($baseDir . '/app/BuiltIn/Exception'),
     'App\\BuiltIn\\DataType\\FixedTypeArray\\' => array($baseDir . '/app/BuiltIn/DataType/FixedTypeArray'),
     'App\\BuiltIn\\DataType\\FixedLengthArray\\' => array($baseDir . '/app/BuiltIn/DataType/FixedLengthArray'),
     'App\\BuiltIn\\Class\\' => array($baseDir . '/app/BuiltIn/Class'),

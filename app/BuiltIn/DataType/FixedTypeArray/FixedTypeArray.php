@@ -84,6 +84,15 @@ class FixedTypeArray {
         $this->frame['length'] = $this->length();
     }
 
+    public function _getPossibleTypes(): array 
+    {
+        $possibleTypes = [];
+        foreach($this->enums as $key => $value) {
+            $possibleTypes[] = $key;
+        }
+        return $possibleTypes;
+    }
+
     // End of private Core functions
 
     // 

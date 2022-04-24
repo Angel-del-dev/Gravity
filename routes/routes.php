@@ -13,7 +13,7 @@ Router::get('/', [HomeController::class, 'getHome']);
 /**
  * Example of get route with dynamic values as the url query string
  */
-Router::get('/about', function(array $params = []) {
+Router::get('/about', function() {
     return 'About section';
 
 });
