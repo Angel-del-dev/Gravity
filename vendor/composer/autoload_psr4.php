@@ -21,5 +21,6 @@ return array(
     'App\\BuiltIn\\Exception\\' => array($baseDir . '/app/BuiltIn/Exception'),
     'App\\BuiltIn\\DataType\\FixedTypeArray\\' => array($baseDir . '/app/BuiltIn/DataType/FixedTypeArray'),
     'App\\BuiltIn\\DataType\\FixedLengthArray\\' => array($baseDir . '/app/BuiltIn/DataType/FixedLengthArray'),
+    'App\\BuiltIn\\Class\\Formatting\\' => array($baseDir . '/app/BuiltIn/Class/Formatting'),
     'App\\BuiltIn\\Class\\' => array($baseDir . '/app/BuiltIn/Class'),
 );

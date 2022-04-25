@@ -6,7 +6,7 @@ use App\http\Controllers\ContactController;
 use App\http\Controllers\DataTypeTestController;
 use App\http\Controllers\HomeController;
 use App\http\Controllers\DBTestController;
-use Configuration\Request;
+use App\http\Controllers\FormattingLibrary;
 
 Router::get('/', [HomeController::class, 'getHome']);
 
@@ -42,5 +42,7 @@ Router::get('/hello/:test1:', function($get) {
 });
 
 Router::post('/contact/:id:', [ContactController::class, 'contactPost']);
+
+Router::get('/formattingString', [FormattingLibrary::class, 'test']);
 
 ?>

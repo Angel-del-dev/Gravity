@@ -20,6 +20,7 @@
             "App\\http\\Models\\": "app/http/Models/",
 
             "App\\BuiltIn\\Class\\": "app/BuiltIn/Class/",
+            "App\\BuiltIn\\Class\\Formatting\\": "app/BuiltIn/Class/Formatting/",
 
             "App\\BuiltIn\\MySql\\": "app/BuiltIn/MySql/",
             "App\\BuiltIn\\MySql\\Methods\\": "app/BuiltIn/MySql/Methods",

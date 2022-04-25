@@ -45,6 +45,7 @@ class ComposerStaticInite6b06d2bbca4b2cf25fc2b30b3b7c0fc
             'App\\BuiltIn\\Exception\\' => 22,
             'App\\BuiltIn\\DataType\\FixedTypeArray\\' => 36,
             'App\\BuiltIn\\DataType\\FixedLengthArray\\' => 38,
+            'App\\BuiltIn\\Class\\Formatting\\' => 29,
             'App\\BuiltIn\\Class\\' => 18,
         ),
     );
@@ -109,6 +110,10 @@ class ComposerStaticInite6b06d2bbca4b2cf25fc2b30b3b7c0fc
         'App\\BuiltIn\\DataType\\FixedLengthArray\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/BuiltIn/DataType/FixedLengthArray',
+        ),
+        'App\\BuiltIn\\Class\\Formatting\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/BuiltIn/Class/Formatting',
         ),
         'App\\BuiltIn\\Class\\' => 
         array (
