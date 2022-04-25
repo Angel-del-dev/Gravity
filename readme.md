@@ -1,4 +1,4 @@
-# Gravity(**Dev** *0.0.2.2*)
+# Gravity(**Dev** *0.0.5.1*)
 
 ## Features
 * Simple semi-static routing system
@@ -13,6 +13,8 @@
 * Custom DataTypes
    * Fixed type array
 * Log system
+* Library added
+    * String cleaning && Array formatting library
 
 ## To-do
 * Database
