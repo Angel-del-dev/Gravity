@@ -30,7 +30,9 @@
             "App\\BuiltIn\\DataType\\FixedTypeArray\\": "app/BuiltIn/DataType/FixedTypeArray",
             "App\\BuiltIn\\DataType\\FixedLengthArray\\": "app/BuiltIn/DataType/FixedLengthArray",
             
-            "App\\BuiltIn\\Exception\\": "app/BuiltIn/Exception"
+            "App\\BuiltIn\\Exception\\": "app/BuiltIn/Exception",
+            
+            "App\\BuiltIn\\Auth\\": "app/BuiltIn/Auth"
         }       
         
     }

@@ -23,4 +23,5 @@ return array(
     'App\\BuiltIn\\DataType\\FixedLengthArray\\' => array($baseDir . '/app/BuiltIn/DataType/FixedLengthArray'),
     'App\\BuiltIn\\Class\\Formatting\\' => array($baseDir . '/app/BuiltIn/Class/Formatting'),
     'App\\BuiltIn\\Class\\' => array($baseDir . '/app/BuiltIn/Class'),
+    'App\\BuiltIn\\Auth\\' => array($baseDir . '/app/BuiltIn/Auth'),
 );
