@@ -101,6 +101,14 @@ class Methods {
         return  "LIMIT $limit $offset";
     }
 
+    public static function set(array $keyValue) {
+        $set = [];
+        foreach($keyValue as $key => $value) {
+            $set[] = "$key = '$value'";
+        }
+        return $set;
+    }
+
     /**
      * Replaces the actual value of the where with a ? and returns an array with:
      * the condition, the value and the raw condition

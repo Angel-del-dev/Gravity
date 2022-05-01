@@ -3,7 +3,7 @@
 namespace App\BuiltIn\MySql;
 
 use App\BuiltIn\Class\Log;
-use DateTime;
+use Configuration\EnvConfig;
 
 class MySql{
 
@@ -13,7 +13,22 @@ class MySql{
 
     public static function create() { }
 
-    public static function update() { }
+    public static function update(
+        string $table,
+        array $values,
+        array $where = ['where 1 = ?', ['1'], 'where 1 = 1']
+    ) {
+        $conn = self::createConnection();
+        $update = 'UPDATE';
+        $query = "$update $table SET ".implode(', ',$values)."  {$where[0]}";
+        
+        $stmt = $conn->prepare($query);
+
+        $fullQueryLog = "$update $table SET ".implode(', ',$values)."  {$where[2]}";
+
+        self::createLog("Checked query succesfully executed: $fullQueryLog");
+        return self::execute($stmt, $where[1]);
+     }
 
     public static function get(
         string $table,
@@ -36,10 +51,7 @@ class MySql{
 
         $fullQueryLog = "'$select ". implode(', ', $columns) ." from $table {$where[2]}'";
 
-        Log::create(
-            "Checked query executed $fullQueryLog", 
-            $_SERVER['DOCUMENT_ROOT'] . '/../logs/Mysql/query.log'
-        );
+        self::createLog("Checked query succesfully executed: $fullQueryLog");
         
         return self::execute($stmt, $where[1]);
     }
@@ -49,7 +61,7 @@ class MySql{
     /**
      * Execute the query
      */
-    private static function execute($stmt, $bind = ['']) {
+    private static function execute($stmt, $bind = []) {
 
         if(sizeof($bind) > 0) {
             $amount = self::createBind(count($bind));
@@ -71,7 +83,13 @@ class MySql{
 
         $stmt->close();
 
-        return $result->fetch_all(MYSQLI_ASSOC);
+        $return = $affected_rows;
+
+        if(!is_bool($result)) {
+            $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        return $return;
     }
 
     private static function createBind(int $length): string
@@ -87,12 +105,23 @@ class MySql{
         $conn = self::createConnection();
         $stmt = $conn->prepare($query);
         
-        Log::create(
-            "Unchecked query executed '$query'", 
-            $_SERVER['DOCUMENT_ROOT'] . '/../logs/Mysql/query.log'
+        self::createLog(
+            "Unchecked query executed '$query'"
         );
 
         return self::execute($stmt);
+    }
+
+    private static function createLog(string $message): void
+    {
+        $env_vars = EnvConfig::getValues();
+        print_r($env_vars['MYSQL_LOG_AFTER_QUERY']);
+        if($env_vars['MYSQL_LOG_AFTER_QUERY'] === 'true') {
+            Log::create(
+                $message, 
+                $_SERVER['DOCUMENT_ROOT'] . '/../logs/Mysql/query.log'
+            );
+        }
     }
 }
 

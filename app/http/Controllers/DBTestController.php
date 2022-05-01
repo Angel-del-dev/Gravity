@@ -10,18 +10,43 @@ use App\http\Models\TestModel;
 
 class DBTestController extends Controller{
 
-    public static function dbtest(): array
+    public static function dbtest()
+    {
+        $result = Model::update(
+                table: TestModel::$table,
+                values: Methods::set(
+                    ['name' => 'test4']
+                )
+            );
+    }
+
+    private function rawQueryExample(): void
     {
         // $result = Model::_raw("select * from test");
-        $result = Model::get(
-            table: TestModel::$table,
-            where: Methods::where([
-                ['id = 1', "and"],
-                ['nombre = test']
-            ]),
-            columns: TestModel::$columns
-        );
+    }
 
-        return $result;
+    private function selectExample(): void
+    {
+        // $result = Model::get(
+        //     table: ContentModel::$table,
+        //     columns: ['contingut.id', 'u.name', 'titulo', 'portada', 'url', 'descripcio'],
+        //     limit: 10,
+        //     join: [Methods::innerJoin(ContentModel::$table, 'users', 'propietari', 'id', 'u')],
+        //     orderBy: Methods::orderBy('contingut.id', 'desc'),
+        //     groupBy: Methods::groupBy('contingut.id')
+        // );
+    }
+
+    private function updateExample(): void
+    {
+        /**
+         * Returns the amount of affected rows
+         */
+        // $result = Model::update(
+        //     table: TestModel::$table,
+        //     values: Methods::set(
+        //         ['name' => 'test4']
+        //     )
+        // );
     }
 }
