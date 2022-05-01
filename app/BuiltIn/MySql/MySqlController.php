@@ -17,7 +17,7 @@ class MySqlController {
             $env_vars['MYSQL_PASSWORD'], 
             $env_vars['MYSQL_DATABASE']
         );
-
+        mysqli_set_charset($connection, 'utf8');
         return $connection;
     }
 }

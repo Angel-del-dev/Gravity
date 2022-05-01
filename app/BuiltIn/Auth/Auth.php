@@ -22,6 +22,11 @@ class Auth{
         return isset($_SESSION[self::AUTH_SESSION_NAME]);
     }
 
+    public static function usr(): array
+    {
+        return $_SESSION[self::AUTH_SESSION_NAME];
+    }
+
 }
 
 ?>

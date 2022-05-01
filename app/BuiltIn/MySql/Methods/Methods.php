@@ -126,7 +126,7 @@ class Methods {
         string $secondaryTableAlias
     ): string
     {
-        return "$secondaryTable as $secondaryTableAlias 
+        return " $secondaryTable as $secondaryTableAlias 
         ON $principalTable.$firstParam = $secondaryTableAlias.$secondParam";
     }
 

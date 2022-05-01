@@ -18,17 +18,19 @@ class MySql{
     public static function get(
         string $table,
         array $columns = ['*'],
-        array $where = [],
-        string $join = '',
+        array $where = ['where 1 = ?', ['1'], 'where 1 = 1'],
+        array $join = [],
         string $orderBy = '',
         string $groupBy = '',
         string $having = '',
-        string $limit = '' 
+        int $limit = 0 
     ) {
         $select = 'SELECT';
 
         $conn = self::createConnection();
-        $query = "$select ". implode(', ', $columns) ." from $table $join {$where[0]} $groupBy $orderBy $having $limit";
+        $query = "$select ". implode(', ', $columns) ." from $table ".implode(' ', $join)." {$where[0]} $groupBy $orderBy $having";
+
+        if($limit > 0) $query .= "limit $limit";
 
         $stmt = $conn->prepare($query);
 
@@ -47,7 +49,7 @@ class MySql{
     /**
      * Execute the query
      */
-    private static function execute($stmt, $bind = []) {
+    private static function execute($stmt, $bind = ['']) {
 
         if(sizeof($bind) > 0) {
             $amount = self::createBind(count($bind));
