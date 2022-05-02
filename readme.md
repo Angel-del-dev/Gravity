@@ -1,4 +1,4 @@
-# Gravity(**Dev** *0.0.5.1*)
+# Gravity(**Dev** *0.8.2*)
 
 ## Features
 * Simple semi-static routing system
@@ -10,19 +10,27 @@
 * Dotenv library
 * Query builder basics
     * Select query builder(Prepared statement with bind_values)
+    * Update query builder
 * Custom DataTypes
    * Fixed type array
 * Log system
+   * Creation of logs
+   * Automatic logs if specified in .env
+      *  Mysql querys
 * Library added
     * String cleaning && Array formatting library
+* Custom datatypes
+* Custom methods
+* Sessions
+    * Persisting user data(Through login)
+    * Checking if an user is loged in
+* File management basics
 
 ## To-do
 * Database
-    * Connecting to a database(`mysql` for now)
-    * Advanced query system
-    * Create models
-* Custom exceptions
-* Custom datatypes(Ver libreria.test)
-* Custom methods
-* Sessions
-    * Persisting information through the
+    * Insert
+    * Delete
+    * Structure
+      * Create or drop tables/columns
+      * Primary keys and foreign keys
+* Website to document the framework
