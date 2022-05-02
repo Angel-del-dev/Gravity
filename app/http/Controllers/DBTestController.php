@@ -7,17 +7,13 @@ namespace App\http\Controllers;
 use App\BuiltIn\MySql\Methods\Methods;
 use App\http\Models\Model;
 use App\http\Models\TestModel;
+use App\http\Models\UserModel;
 
 class DBTestController extends Controller{
 
     public static function dbtest()
     {
-        $result = Model::update(
-                table: TestModel::$table,
-                values: Methods::set(
-                    ['name' => 'test4']
-                )
-            );
+        
     }
 
     private function rawQueryExample(): void
@@ -48,5 +44,17 @@ class DBTestController extends Controller{
         //         ['name' => 'test4']
         //     )
         // );
+    }
+
+    private function insertExample(): void
+    {
+        // Model::create(
+        //     UserModel::$table,
+        //     [
+        //         ['id' => 1, 'name' => '"Lori"'],
+        //         ['id' => 2, 'name' => '"Albert"'],
+        //         ['id' => 3, 'name' => '"Carol"']
+        //     ] 
+        //  );
     }
 }

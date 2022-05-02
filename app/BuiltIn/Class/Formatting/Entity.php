@@ -109,6 +109,19 @@ class Entity
 
 		return $format_array;
 	}
+
+	public static function isArrayIdenticalWithItself(array $array): bool
+	{
+		for($i = 0 ; $i < sizeof($array) ; $i++) {
+			for($j = 0; $j < sizeof($array); $j++) {
+				if($array[$j] !== $array[$i]) {
+					return false;
+				}
+			}
+		}
+
+		return true;
+	}
 	// 
 	// End of array formatting functions
 	// 

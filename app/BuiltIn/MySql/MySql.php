@@ -2,8 +2,10 @@
 
 namespace App\BuiltIn\MySql;
 
+use App\BuiltIn\Class\Formatting\Entity;
 use App\BuiltIn\Class\Log;
 use Configuration\EnvConfig;
+use Exception;
 
 class MySql{
 
@@ -11,7 +13,35 @@ class MySql{
         return MySqlController::establishConnection();
     }
 
-    public static function create() { }
+    public static function create(
+        string $table,
+        array $keyValue
+    ) { 
+        $conn = self::createConnection();
+        
+        $insert = 'INSERT';
+    
+        $values = [];
+        $params = [];
+        
+        foreach($keyValue as $list) {
+            $mockupParam = [];
+            $mockupValues = [];
+            foreach($list as $key => $value) {
+                $mockupParam[] = $key;
+                $mockupValues[] = $value;
+            }
+            $params[] = '('.implode(', ', $mockupParam) .')';
+            $values[] = '('.implode(', ', $mockupValues) .')';
+        }
+        if (!Entity::isArrayIdenticalWithItself($params)) throw new Exception('The columns must be the same');
+
+        $query = "$insert INTO $table {$params[0]} VALUES ". implode(', ', $values);
+        self::createLog("Checked query executed: $query");
+        
+        $stmt = $conn->prepare($query);
+        return self::execute($stmt);
+    }
 
     public static function update(
         string $table,
@@ -26,7 +56,7 @@ class MySql{
 
         $fullQueryLog = "$update $table SET ".implode(', ',$values)."  {$where[2]}";
 
-        self::createLog("Checked query succesfully executed: $fullQueryLog");
+        self::createLog("Checked query executed: $fullQueryLog");
         return self::execute($stmt, $where[1]);
      }
 
@@ -51,7 +81,7 @@ class MySql{
 
         $fullQueryLog = "'$select ". implode(', ', $columns) ." from $table {$where[2]}'";
 
-        self::createLog("Checked query succesfully executed: $fullQueryLog");
+        self::createLog("Checked query executed: $fullQueryLog");
         
         return self::execute($stmt, $where[1]);
     }
@@ -62,7 +92,7 @@ class MySql{
      * Execute the query
      */
     private static function execute($stmt, $bind = []) {
-
+        
         if(sizeof($bind) > 0) {
             $amount = self::createBind(count($bind));
     
@@ -70,13 +100,13 @@ class MySql{
         }
 
 
-        $stmt->execute();
+        $executed = $stmt->execute();
 
         $result = $stmt->get_result();
 
         $affected_rows = $stmt->affected_rows;
 
-        if (!$stmt -> execute()) {
+        if (!$executed) {
             echo $stmt -> error;
             die();
         }
@@ -115,7 +145,7 @@ class MySql{
     private static function createLog(string $message): void
     {
         $env_vars = EnvConfig::getValues();
-        print_r($env_vars['MYSQL_LOG_AFTER_QUERY']);
+        
         if($env_vars['MYSQL_LOG_AFTER_QUERY'] === 'true') {
             Log::create(
                 $message, 
