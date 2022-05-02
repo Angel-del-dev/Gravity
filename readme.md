@@ -27,6 +27,7 @@
 * File management basics
 
 ## To-do
+* Autentication routes
 * Database
     * Insert
     * Delete
