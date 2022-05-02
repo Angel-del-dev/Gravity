@@ -13,13 +13,13 @@
     * Update query builder
 * Custom DataTypes
    * Fixed type array
+   * Fixed length array
 * Log system
    * Creation of logs
    * Automatic logs if specified in .env
       *  Mysql querys
 * Library added
     * String cleaning && Array formatting library
-* Custom datatypes
 * Custom methods
 * Sessions
     * Persisting user data(Through login)
