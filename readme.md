@@ -1,4 +1,4 @@
-# Gravity(**Dev** *0.8.2*)
+# Gravity(**Dev** *0.8.5*)
 
 ## Features
 * Simple semi-static routing system
@@ -11,6 +11,7 @@
 * Query builder basics
     * Select query builder(Prepared statement with bind_values)
     * Update query builder
+    * Insert query builder
 * Custom DataTypes
    * Fixed type array
    * Fixed length array
