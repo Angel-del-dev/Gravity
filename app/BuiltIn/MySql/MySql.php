@@ -105,7 +105,7 @@ class MySql{
 
         self::createLog("Checked query executed: $fullQuery");
 
-        return self::execute($stmt, $where[1]);
+        return isset($where[1]) ? self::execute($stmt, $where[1]) : self::execute($stmt);
      }
 
     /**

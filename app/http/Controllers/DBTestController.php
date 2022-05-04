@@ -13,7 +13,7 @@ class DBTestController extends Controller{
 
     public static function dbtest()
     {
-       
+        
     }
 
     private function rawQueryExample(): void
