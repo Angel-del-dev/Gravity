@@ -86,7 +86,27 @@ class MySql{
         return self::execute($stmt, $where[1]);
     }
 
-    public static function delete() { }
+    public static function delete(
+        string $table,
+        array $where = []
+    ) {
+        $delete = 'DELETE';
+
+        $conn = self::createConnection();
+
+        $whereParams = (count($where) > 2) ? $where[0] : '';
+        $fullQueryWhereParams = (count($where) > 2) ? $where[2] : '';
+
+        $query = "$delete from $table $whereParams";
+
+        $stmt = $conn->prepare($query);
+
+        $fullQuery = "$delete from $table $fullQueryWhereParams";
+
+        self::createLog("Checked query executed: $fullQuery");
+
+        return self::execute($stmt, $where[1]);
+     }
 
     /**
      * Execute the query

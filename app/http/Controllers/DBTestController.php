@@ -13,7 +13,7 @@ class DBTestController extends Controller{
 
     public static function dbtest()
     {
-        
+       
     }
 
     private function rawQueryExample(): void
@@ -56,5 +56,15 @@ class DBTestController extends Controller{
         //         ['id' => 3, 'name' => '"Carol"']
         //     ] 
         //  );
+    }
+
+    private function deleteExample(): void
+    {
+        // $result = Model::delete(
+        //     table: TestModel::$table,
+        //     where: Methods::where([
+        //         ['id = 2']
+        //     ])
+        // );
     }
 }
