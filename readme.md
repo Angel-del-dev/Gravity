@@ -1,4 +1,4 @@
-# Gravity(**Dev** *0.8.5*)
+# Gravity(**Dev** *0.9.0*)
 
 ## Features
 * Simple semi-static routing system
@@ -12,6 +12,7 @@
     * Select query builder(Prepared statement with bind_values)
     * Update query builder
     * Insert query builder
+    * Delete query builder
 * Custom DataTypes
    * Fixed type array
    * Fixed length array
@@ -29,10 +30,5 @@
 
 ## To-do
 * Autentication routes
-* Database
-    * Insert
-    * Delete
-    * Structure
-      * Create or drop tables/columns
-      * Primary keys and foreign keys
+* Adding phpmailer library
 * Website to document the framework
