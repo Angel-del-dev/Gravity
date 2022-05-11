@@ -52,7 +52,6 @@ class FixedLengthArray{
      */
 
     private function checkLength(string $details) {
-        print_r($this->frame['length'] .'>'. $this->frame['size'].'<br />');
         if($this->frame['length'] > $this->frame['size'] ) {
             throw new FixedLengthArrayException($details);
             die();

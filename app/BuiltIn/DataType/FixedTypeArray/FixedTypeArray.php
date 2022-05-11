@@ -9,10 +9,10 @@ class FixedTypeArray {
 
     /**
     * Array that only allows an user set specific datatype. Allows:
-    * INTE;
-    * STRI;
-    * DOUB;
-    * ARRA;
+    * I;
+    * S;
+    * D;
+    * A;
     */
     public function __construct($type) {
         $this->enums = new FixedTypeArrayEnums();
