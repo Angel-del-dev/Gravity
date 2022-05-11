@@ -27,6 +27,7 @@
     * Persisting user data(Through login)
     * Checking if an user is loged in
 * File management basics
+* Choosable view extension through .env
 
 ## To-do
 * Autentication routes
