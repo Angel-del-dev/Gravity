@@ -15,24 +15,7 @@
     "autoload": {
         "psr-4": {
             "Configuration\\": "configuration/",
-
-            "App\\http\\Controllers\\": "app/http/Controllers/",
-            "App\\http\\Models\\": "app/http/Models/",
-
-            "App\\BuiltIn\\Class\\": "app/BuiltIn/Class/",
-            "App\\BuiltIn\\Class\\Formatting\\": "app/BuiltIn/Class/Formatting/",
-
-            "App\\BuiltIn\\MySql\\": "app/BuiltIn/MySql/",
-            "App\\BuiltIn\\MySql\\Methods\\": "app/BuiltIn/MySql/Methods",
-
-            "App\\BuiltIn\\File\\": "app/BuiltIn/File",
-
-            "App\\BuiltIn\\DataType\\FixedTypeArray\\": "app/BuiltIn/DataType/FixedTypeArray",
-            "App\\BuiltIn\\DataType\\FixedLengthArray\\": "app/BuiltIn/DataType/FixedLengthArray",
-            
-            "App\\BuiltIn\\Exception\\": "app/BuiltIn/Exception",
-            
-            "App\\BuiltIn\\Auth\\": "app/BuiltIn/Auth"
+            "App\\": "app/"
         }       
         
     }

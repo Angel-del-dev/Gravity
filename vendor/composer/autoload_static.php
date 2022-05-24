@@ -37,17 +37,7 @@ class ComposerStaticInite6b06d2bbca4b2cf25fc2b30b3b7c0fc
         ),
         'A' => 
         array (
-            'App\\http\\Models\\' => 16,
-            'App\\http\\Controllers\\' => 21,
-            'App\\BuiltIn\\MySql\\Methods\\' => 26,
-            'App\\BuiltIn\\MySql\\' => 18,
-            'App\\BuiltIn\\File\\' => 17,
-            'App\\BuiltIn\\Exception\\' => 22,
-            'App\\BuiltIn\\DataType\\FixedTypeArray\\' => 36,
-            'App\\BuiltIn\\DataType\\FixedLengthArray\\' => 38,
-            'App\\BuiltIn\\Class\\Formatting\\' => 29,
-            'App\\BuiltIn\\Class\\' => 18,
-            'App\\BuiltIn\\Auth\\' => 17,
+            'App\\' => 4,
         ),
     );
 
@@ -80,49 +70,9 @@ class ComposerStaticInite6b06d2bbca4b2cf25fc2b30b3b7c0fc
         array (
             0 => __DIR__ . '/../..' . '/configuration',
         ),
-        'App\\http\\Models\\' => 
+        'App\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app/http/Models',
-        ),
-        'App\\http\\Controllers\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/http/Controllers',
-        ),
-        'App\\BuiltIn\\MySql\\Methods\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/BuiltIn/MySql/Methods',
-        ),
-        'App\\BuiltIn\\MySql\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/BuiltIn/MySql',
-        ),
-        'App\\BuiltIn\\File\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/BuiltIn/File',
-        ),
-        'App\\BuiltIn\\Exception\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/BuiltIn/Exception',
-        ),
-        'App\\BuiltIn\\DataType\\FixedTypeArray\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/BuiltIn/DataType/FixedTypeArray',
-        ),
-        'App\\BuiltIn\\DataType\\FixedLengthArray\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/BuiltIn/DataType/FixedLengthArray',
-        ),
-        'App\\BuiltIn\\Class\\Formatting\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/BuiltIn/Class/Formatting',
-        ),
-        'App\\BuiltIn\\Class\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/BuiltIn/Class',
-        ),
-        'App\\BuiltIn\\Auth\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/BuiltIn/Auth',
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 
