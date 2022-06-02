@@ -29,6 +29,9 @@
 * File management basics
 * Choosable view extension through .env
 
+* Front end framework
+    * Reusable js components with events through new elements in views
+
 ## To-do
 * Autentication routes
 * Adding phpmailer library

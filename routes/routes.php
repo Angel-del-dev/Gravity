@@ -7,6 +7,7 @@ use App\http\Controllers\DataTypeTestController;
 use App\http\Controllers\HomeController;
 use App\http\Controllers\DBTestController;
 use App\http\Controllers\FormattingLibrary;
+use App\http\Controllers\FrontController;
 
 Router::get('/', [HomeController::class, 'getHome']);
 
@@ -44,5 +45,8 @@ Router::get('/hello/:test1:', function($get) {
 Router::post('/contact/:id:', [ContactController::class, 'contactPost']);
 
 Router::get('/formattingString', [FormattingLibrary::class, 'test']);
+
+// Front routes
+Router::get('/front-showcase/get-data', [FrontController::class, 'showcase']);
 
 ?>

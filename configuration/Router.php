@@ -174,7 +174,7 @@ class Router
         foreach($view[1] as $key => $value) {
             ${$key} = $value;
         }
-
+        require_once($_SERVER['DOCUMENT_ROOT'] . "/../app/BuiltIn/helper.php");
         require_once $view[0];
     }
 }
