@@ -56,7 +56,7 @@ class Router
     {
         $callback = self::createCallbacks();
         $route = isset($callback['handler']) ? $callback['handler'] : '';
-        $_GET['value'] = isset($callback['req_values']) ? Request::formatRequest($callback['req_values']) : '';
+        $_GET['value'] = isset($callback['req_values']) ? $callback['req_values'] : '';
 
         self::routeNotExist($route);
 

@@ -1,6 +1,14 @@
 views/*
-!views/home.gravity.phtml
+!views/app.gravity.phtml
 !views/404.gravity.phtml
+
+public/gravity-js/components/*.js
+public/gravity-js/config/*.js
+
+app/http/Controllers/*
+app/http/Models/*
+
+routes/*.php
 
 *.md
 !readme.md
@@ -8,4 +16,4 @@ views/*
 .env
 !.env-example
 
-vendor/*
+vendor/**/
