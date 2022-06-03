@@ -59,7 +59,11 @@ export class gravity {
         for(let arg of rawArgs)
         {
             const value = arg.getAttribute('value');
-            args[arg.getAttribute('name')] = JSON.parse(value);
+            try{
+                args[arg.getAttribute('name')] = JSON.parse(value);
+            }catch(e){
+                args[arg.getAttribute('name')] = value;
+            }
         }
 
         return args;
@@ -67,12 +71,16 @@ export class gravity {
 
     removeSensitiveHTMLElements()
     {
-        if(this.#checkIfDevMode()){
-            const cM = document.querySelectorAll('cM');
-            const data = document.querySelectorAll('data');
+        const cM = document.querySelectorAll('cM');
+        const data = document.querySelectorAll('data');
+        const cTitle = document.querySelectorAll('cTitle');
 
-            this.#removeClassMethods(cM);
-            this.#removeData(data);
+        this.#removeClassMethods(cM);
+        this.#removeData(data);
+        
+        this.changeTitle(cTitle);
+
+        if(this.#checkIfDevMode()){
 
             this.#displayDevModeWarning();
         }
@@ -98,4 +106,23 @@ export class gravity {
             d.remove();
         }
     }
+
+    changeTitle(cTitleList)
+    {
+        if(cTitleList.length < 1) return;
+        if(cTitleList.length > 1) throw new Error(`Only one 'cTitle' element must exist per page`);
+
+        const cTitle = cTitleList[0];
+
+        if(cTitle.hasAttribute('default')) return;
+
+        const title = document.querySelectorAll('title')[0];
+
+        title.innerHTML = cTitle.getAttribute('value');
+    }
+}
+
+export function routeToAssets(route)
+{
+    return `../${route}`;
 }

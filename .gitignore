@@ -1,5 +1,3 @@
-
-
 views/*
 !views/home.gravity.phtml
 !views/404.gravity.phtml
@@ -9,3 +7,5 @@ views/*
 !.gitignore
 .env
 !.env-example
+
+vendor/*
