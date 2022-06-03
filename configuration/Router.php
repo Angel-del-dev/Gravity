@@ -75,6 +75,8 @@ class Router
         $method = $_SERVER['REQUEST_METHOD'];
         $callback = null;
 
+        if(is_null(self::$handlers)) return;
+
         foreach(self::$handlers as $handler) {
 
             $storedUrl = explode('/', $handler['path']);
