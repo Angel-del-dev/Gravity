@@ -1,5 +1,7 @@
 # Gravity(**Dev** *0.9.11*)
 
+(Cheat-sheet)[https://angel-del-dev.github.io/gravity-cheat-sheet/]
+
 ## Features
 * Simple semi-static routing system
     * Absolute routes with url params
