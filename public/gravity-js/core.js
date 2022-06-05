@@ -20,7 +20,7 @@ import { gravity as g } from "./config/gravity.js";
         }
   
         const body = structure['body'];
-        const events = structure['events'];
+        const events = structure['events'] ?? [];
    
         if (structure === undefined) {
          gM.toWarn(`Method : '${mN}' from class :'${cN}' returns nothing`);
