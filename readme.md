@@ -1,5 +1,5 @@
 ![Gravity logo](public/img/logo.png)
-# Gravity(**Dev** *0.9.11*)
+# Gravity(*0.9.12.alpha.2*)
 
 (Cheat-sheet)[https://angel-del-dev.github.io/gravity-cheat-sheet/]
 
