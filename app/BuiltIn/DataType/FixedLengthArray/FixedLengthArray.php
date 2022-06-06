@@ -52,7 +52,7 @@ class FixedLengthArray{
      */
 
     private function checkLength(string $details) {
-        if($this->frame['length'] > $this->frame['size'] ) {
+        if($this->frame['length'] >= $this->frame['size'] ) {
             throw new FixedLengthArrayException($details);
             die();
         }
