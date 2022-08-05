@@ -1,7 +1,7 @@
 ![Gravity logo](public/img/logo.png)
 # Gravity(*0.9.12.alpha.2*)
 
-## This project will not be continued
+## *This project will not be continued*
 
 (Cheat-sheet)[https://angel-del-dev.github.io/gravity-cheat-sheet/]
 
