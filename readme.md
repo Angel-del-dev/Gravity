@@ -2,6 +2,7 @@
 # Gravity(*0.9.12.alpha.2*)
 
 ## *This project will not be continued*
+(New version)[https://github.com/Angel-del-dev/Gravity-V2]
 
 (Cheat-sheet)[https://angel-del-dev.github.io/gravity-cheat-sheet/]
 
